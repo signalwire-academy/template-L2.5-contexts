@@ -1,0 +1,74 @@
+# Grading configuration for Lab 2.5: Contexts & Workflows
+
+assignment:
+  id: L2.5-contexts
+  name: "Lab 2.5: Contexts & Workflows"
+  level: 2
+  type: lab
+  passing_score: 70
+
+checks:
+  - id: instantiate
+    name: "Agent Instantiation"
+    points: 10
+    type: instantiate
+    file: solution/agent.py
+  - id: swml_valid
+    name: "SWML Generation"
+    points: 10
+    type: swml_valid
+    file: solution/agent.py
+  - id: func_start
+    name: "start_order function"
+    points: 15
+    type: function_exists
+    file: solution/agent.py
+    function: start_order
+  - id: func_add
+    name: "add_pizza function"
+    points: 15
+    type: function_exists
+    file: solution/agent.py
+    function: add_pizza
+  - id: func_complete
+    name: "complete_order function"
+    points: 15
+    type: function_exists
+    file: solution/agent.py
+    function: complete_order
+  - id: has_contexts
+    name: "Contexts Configured"
+    points: 15
+    type: swml_contains
+    file: solution/agent.py
+    require:
+      - text: "contexts"
+  - id: test_add_pizza
+    name: "Test: Add pizza"
+    points: 20
+    type: exec
+    file: solution/agent.py
+    function: add_pizza
+    args:
+      pizza_type: "pepperoni"
+      size: "large"
+    expect:
+      stdout_contains:
+        - "added"
+        - "large"
+
+
+feedback:
+  pass: |
+    Excellent work! You've completed Lab 2.5: Contexts & Workflows.
+
+    **Next steps:**
+    - Review the concepts covered
+    - Continue to the next lab
+
+  fail: |
+    Some checks didn't pass. Review the requirements and try again.
+
+    **Tips:**
+    - Run `swaig-test solution/agent.py --list-tools` to verify functions
+    - Run `swaig-test solution/agent.py --dump-swml` to check SWML
