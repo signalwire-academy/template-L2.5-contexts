@@ -66,4 +66,10 @@ See `reference/starter.py` for a boilerplate template.
 
 ---
 
+## Next Assignment
+
+Ready to continue? [**Start Lab 2.6: State Management**](https://classroom.github.com/a/IbVS78JP)
+
+---
+
 *SignalWire AI Agents Certification*
